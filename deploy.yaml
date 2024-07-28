@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: path-routing-demo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: path-routing-demo
+  template:
+    metadata:
+      labels:
+        app: path-routing-demo
+    spec:
+      containers:
+      - name: path-routing-demo
+        image: anshu049/path-routing-demo
+        ports:
+        - containerPort: 5000
+
